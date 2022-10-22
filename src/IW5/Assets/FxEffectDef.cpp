@@ -5,7 +5,7 @@ namespace ZoneTool
 {
 	namespace IW5
 	{
-		H1::FxElemType convert_elem_type(IW5::FxElemType type)
+		/*H1::FxElemType convert_elem_type(IW5::FxElemType type)
 		{
 			switch (type)
 			{
@@ -293,15 +293,15 @@ namespace ZoneTool
 			}
 
 			return h1_asset;
-		}
+		}*/
 
 		void IFxEffectDef::dump(FxEffectDef* asset, ZoneMemory* mem)
 		{
-			// generate h1 fx
+			/*// generate h1 fx
 			auto* h1_asset = GenerateH1FxEffectDef(asset, mem);
 
 			// dump fx
-			H1::IFxEffectDef::dump(h1_asset);
+			H1::IFxEffectDef::dump(h1_asset);*/
 		}
 	}
 }

@@ -31,7 +31,6 @@ namespace ZoneTool
 			dump.dump_array(asset->tagPositions, asset->numBones - asset->numRootBones);
 			dump.dump_array(asset->partClassification, asset->numBones);
 			dump.dump_array(asset->baseMat, asset->numBones);
-			dump.dump_array(asset->reactiveMotionParts, asset->numReactiveMotionParts);
 			dump.dump_single(asset->reactiveMotionTweaks);
 			dump.dump_array(asset->collSurfs, asset->numCollSurfs);
 			dump.dump_array(asset->boneInfo, asset->numBones);
@@ -48,6 +47,7 @@ namespace ZoneTool
 			for (auto i = 0; i < 6; i++)
 			{
 				dump.dump_asset(asset->lodInfo[i].modelSurfs);
+				dump.dump_array(asset->lodInfo[i].reactiveMotionParts, asset->lodInfo[i].numReactiveMotionParts);
 			}
 
 			// physics subassets

@@ -97,7 +97,7 @@ namespace ZoneTool
 			h1_asset->numBones = asset->numBones;
 			h1_asset->numRootBones = asset->numRootBones;
 			h1_asset->numsurfs = asset->numSurfaces;
-			h1_asset->numReactiveMotionParts = 0;
+			//h1_asset->numReactiveMotionParts = 0;
 			h1_asset->lodRampType = asset->lodRampType;
 			h1_asset->scale = 1.0f;
 			memcpy(&h1_asset->noScalePartBits, &asset->noScalePartBits, sizeof(asset->noScalePartBits));
@@ -113,7 +113,7 @@ namespace ZoneTool
 			REINTERPRET_CAST_SAFE(h1_asset->tagPositions, asset->tagPositions);
 			REINTERPRET_CAST_SAFE(h1_asset->partClassification, asset->partClassification);
 			REINTERPRET_CAST_SAFE(h1_asset->baseMat, asset->animMatrix);
-			h1_asset->reactiveMotionParts = nullptr;
+			//h1_asset->reactiveMotionParts = nullptr;
 			h1_asset->reactiveMotionTweaks = nullptr;
 
 			h1_asset->materialHandles = mem->Alloc<H1::Material* __ptr64>(asset->numSurfaces);
@@ -129,6 +129,8 @@ namespace ZoneTool
 			// level of detail data
 			for (auto i = 0; i < asset->numLods; i++)
 			{
+				h1_asset->lodInfo[i].numReactiveMotionParts = 0;
+				h1_asset->lodInfo[i].reactiveMotionParts = nullptr;
 				h1_asset->lodInfo[i].dist = asset->lods[i].dist;
 				h1_asset->lodInfo[i].numsurfs = asset->lods[i].numSurfacesInLod;
 				h1_asset->lodInfo[i].surfIndex = asset->lods[i].surfIndex;

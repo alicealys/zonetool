@@ -36,7 +36,7 @@ namespace ZoneTool
 
 		void IGfxImage::dump(GfxImage* asset)
 		{
-			auto path = "images\\"s + clean_name(asset->name) + ".h1Image"s;
+			auto path = "images\\"s + clean_name(asset->name) + ".h2Image"s;
 			assetmanager::dumper write;
 			if (!write.open(path))
 			{

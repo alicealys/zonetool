@@ -211,7 +211,7 @@ namespace ZoneTool
 			write.dump_array(asset->dpvs.unknownSModelVisData1, asset->dpvs.smodelVisDataCount);
 			write.dump_array(asset->dpvs.unknownSModelVisData2, 2 * asset->dpvs.smodelVisDataCount);
 
-			write.dump_array(asset->dpvs.lodData, asset->dpvs.smodelCount + 1);
+			write.dump_array(asset->dpvs.lodData, asset->dpvs.unkCount2 + 1);
 			write.dump_array(asset->dpvs.tessellationCutoffVisData, asset->dpvs.surfaceVisDataCount);
 			write.dump_array(asset->dpvs.sortedSurfIndex, asset->dpvs.staticSurfaceCount);
 
@@ -254,6 +254,14 @@ namespace ZoneTool
 			for (unsigned int i = 0; i < asset->dpvs.smodelCount; i++)
 			{
 				write.dump_raw(asset->dpvs.constantBuffersAmbient[i], 1);
+			}
+			write.dump_array(asset->dpvs.gfx_unk, asset->dpvs.unkCount1);
+			for (unsigned int i = 0; i < asset->dpvs.unkCount1; i++)
+			{
+				if (asset->dpvs.gfx_unk[i].info.lightingValues)
+				{
+					write.dump_array(asset->dpvs.gfx_unk[i].info.lightingValues, asset->dpvs.gfx_unk[i].info.numLightingValues);
+				}
 			}
 
 			write.dump_array(asset->dpvsDyn.dynEntCellBits[0],

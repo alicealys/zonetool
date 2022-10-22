@@ -64,8 +64,8 @@ namespace
 			{"mc_l_sm_r0c0n0s0",						"mc_l_sm_r0c0n0sd0_nfwpf"},
 			{"mc_l_sm_r0c0n0s0_nocast",					"mc_l_sm_r0c0n0sd0_nfwpf"}, // no nocast
 			{"mc_l_sm_r0c0n0s0_sat",					"mc_l_sm_r0c0n0sd0_nfwpf"}, // no sat
-			{"mc_l_sm_r0c0n0s0p0",						"mc_l_sm_r0c0n0sd0p0_nfwpf"},
-			{"mc_l_sm_r0c0n0s0p0_sat",					"mc_l_sm_r0c0n0sd0p0_nfwpf"}, // no sat
+			{"mc_l_sm_r0c0n0s0p0",						"mc_l_sm_r0c0n0sd0_nfwpf_p0"},
+			{"mc_l_sm_r0c0n0s0p0_sat",					"mc_l_sm_r0c0n0sd0_nfwpf_p0"}, // no sat
 			{"mc_l_sm_r0c0q0n0",						"mc_l_sm_r0c0n0_nfwpf"}, // couldn't find
 			{"mc_l_sm_r0c0q0n0s0",						"mc_l_sm_r0c0n0sd0_nfwpf"}, // couldn't find
 			{"mc_l_sm_r0c0q0n0s0p0",					"mc_l_sm_r0c0q0n0sd0p0_nfwpf"},

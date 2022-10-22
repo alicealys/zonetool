@@ -165,16 +165,22 @@ namespace ZoneTool
 			h1_asset->primaryLightCount = asset->primaryLightCount;
 			h1_asset->primaryLightEnvCount = asset->primaryLightCount;
 			h1_asset->sortKeyLitDecal = 7; // h1_asset->sortKeyLitDecal = asset->sortKeyLitDecal;
-			h1_asset->sortKeyEffectDecal = 43; // h1_asset->sortKeyEffectDecal = asset->sortKeyEffectDecal;
+			h1_asset->sortKeyEffectDecal = 44; // h1_asset->sortKeyEffectDecal = asset->sortKeyEffectDecal;
 			h1_asset->sortKeyTopDecal = 17;
-			h1_asset->sortKeyEffectAuto = 53; // h1_asset->sortKeyEffectAuto = asset->sortKeyEffectAuto;
-			h1_asset->sortKeyDistortion = 48; // h1_asset->sortKeyDistortion = asset->sortKeyDistortion;
+			h1_asset->sortKeyEffectAuto = 54; // h1_asset->sortKeyEffectAuto = asset->sortKeyEffectAuto;
+			h1_asset->sortKeyDistortion = 49; // h1_asset->sortKeyDistortion = asset->sortKeyDistortion;
 			h1_asset->sortKeyUnknown = 18;
 			h1_asset->sortKeyUnknown2 = 33;
 
 			h1_asset->dpvsPlanes.cellCount = asset->dpvsPlanes.cellCount;
 			REINTERPRET_CAST_SAFE(h1_asset->dpvsPlanes.planes, asset->dpvsPlanes.planes);
-			REINTERPRET_CAST_SAFE(h1_asset->dpvsPlanes.nodes, asset->dpvsPlanes.nodes);
+
+			h1_asset->dpvsPlanes.nodes = reinterpret_cast<H1::mnode_t*>(mem->Alloc<unsigned int>(asset->nodeCount));
+			for (auto i = 0; i < asset->nodeCount; i++)
+			{
+				h1_asset->dpvsPlanes.nodes[i].unk0 = 0;
+				h1_asset->dpvsPlanes.nodes[i].unk1 = asset->dpvsPlanes.nodes[i];
+			}
 
 			h1_asset->dpvsPlanes.sceneEntCellBits = mem->Alloc<unsigned int>(asset->dpvsPlanes.cellCount << 9);
 			for (int i = 0; i < asset->dpvsPlanes.cellCount << 9; i++)
@@ -584,6 +590,7 @@ namespace ZoneTool
 			h1_asset->dpvs.unknownSModelVisData2 = mem->Alloc<unsigned int>(h1_asset->dpvs.smodelVisDataCount * 2);
 
 			h1_asset->dpvs.lodData = mem->Alloc<unsigned int>(h1_asset->dpvs.smodelCount + 1);
+			h1_asset->dpvs.unkCount2 = h1_asset->dpvs.smodelCount;
 			h1_asset->dpvs.tessellationCutoffVisData = mem->Alloc<unsigned int>(h1_asset->dpvs.surfaceVisDataCount);
 
 			h1_asset->dpvs.sortedSurfIndex = mem->Alloc<unsigned int>(h1_asset->dpvs.staticSurfaceCount);
