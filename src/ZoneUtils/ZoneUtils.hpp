@@ -27,7 +27,7 @@ using Json = nlohmann::json;
 #undef xor
 #undef and
 
-#define MAX_ZONE_SIZE 1024 * 1024 * 200
+#define MAX_ZONE_SIZE 1024 * 1024 * 200 * 4
 
 namespace ZoneTool
 {

@@ -141,7 +141,7 @@ namespace ZoneTool
 
 			if (!memory)
 			{
-				memory = std::make_shared<ZoneMemory>(1024 * 1024 * 128);		// 128mb
+				memory = std::make_shared<ZoneMemory>(1024 * 1024 * 1024);		// 128mb
 			}
 
 			fastfile = static_cast<std::string>(reinterpret_cast<const char*>(*reinterpret_cast<DWORD*>(0x1294A00)
@@ -438,7 +438,7 @@ namespace ZoneTool
 			}
 		}
 
-		const unsigned int textureBufferSize = 1024 * 1024 * 64; // 64mb
+		const unsigned int textureBufferSize = 1024 * 1024 * 128; // 64mb
 		unsigned int textureBufferIndex = 0;
 		std::unordered_map<std::string, unsigned int> textureMap;
 		std::string texturesFastfiles;
